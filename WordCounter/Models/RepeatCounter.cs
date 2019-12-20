@@ -6,7 +6,7 @@ namespace WordCounter.Models
 {
     public static class RepeatCounter
     {
-        public static checkIfInputIsValid(string text)
+        public static bool checkIfInputIsValid(string text)
         {
             char[] arr = text.Where(Char.IsSymbol).Distinct().ToArray();
             if (arr.Length > 0)

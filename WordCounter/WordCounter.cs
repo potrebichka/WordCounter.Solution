@@ -12,26 +12,53 @@ namespace WordCounter
 
             Console.WriteLine("Welcome to Word Counter Program");
             Console.ResetColor();
+            string sentence, word;
             while (true)
             {
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Enter a sentence:");
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    sentence = Console.ReadLine();
+                    Console.ResetColor();
+                    if (RepeatCounter.checkIfInputIsValid(sentence))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. No symbols are allowed.");
+                    }
+                }
                 Console.WriteLine();
-                Console.WriteLine("Enter a sentence:");
+                while (true)
+                {
+                    Console.WriteLine("Enter a word:");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    word = Console.ReadLine();
+                    Console.ResetColor();
+                    if (RepeatCounter.checkIfInputIsValid(word))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. No symbols are allowed.");
+                    }
+                }
+                
                 Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.Blue;
-                string sentence = Console.ReadLine();
-                Console.ResetColor();
-                Console.WriteLine();
-                Console.WriteLine("Enter a word:");
-                Console.ForegroundColor = ConsoleColor.Blue;
-                string word = Console.ReadLine();
-                Console.ResetColor();
-                Console.WriteLine();
-                RepeatCounter counter = new RepeatCounter(sentence, word);
-                int count = counter.Count();
+
+                int count = RepeatCounter.Count(sentence, word);
+
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine($"Word '{word}' appears in sentence '{sentence}'  {count} times");
                 Console.ResetColor();
+
                 Console.WriteLine("------------------------");
+
                 bool flag = false;
                 while (true)
                 {
