@@ -41,6 +41,8 @@ dotnet test
 * User is able to repeat process.
 * User is able to quit the program.
 
+*Valid input types* : letters, digits, {nothing}, punctuation.
+
 | User Input / sentence | User Input / word | Output |
 |---|---|---|
 | Just a plain sentence | cat | 0 |
@@ -48,6 +50,10 @@ dotnet test
 | Cat hates dog | cat | 1 |
 | A sentence with a cathedral | cat | 0 |
 | A cat sentence with a cathedral | cat | 1 |
+| {nothing} | {nothing} | 0 |
+| Some sentence | {nothing} | 0 |
+| {nothing} | word | 0 |
+
 
 ## Technologies Used
 

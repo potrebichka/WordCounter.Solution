@@ -14,14 +14,18 @@ namespace WordCounter
             Console.ResetColor();
             while (true)
             {
+                Console.WriteLine();
                 Console.WriteLine("Enter a sentence:");
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Blue;
                 string sentence = Console.ReadLine();
                 Console.ResetColor();
+                Console.WriteLine();
                 Console.WriteLine("Enter a word:");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 string word = Console.ReadLine();
                 Console.ResetColor();
+                Console.WriteLine();
                 RepeatCounter counter = new RepeatCounter(sentence, word);
                 int count = counter.Count();
                 Console.ForegroundColor = ConsoleColor.DarkRed;
