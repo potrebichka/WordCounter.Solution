@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WordCounter.Models
 {
@@ -7,7 +8,6 @@ namespace WordCounter.Models
     {
         public string Sentence {get;set;}
         public string Word {get;set;}
-        private int _count = 0;
         public RepeatCounter(string sentence, string word)
         {
             Sentence = sentence;
@@ -15,7 +15,17 @@ namespace WordCounter.Models
         }
         public int Count()
         {
-            return _count;
+            int count = 0;
+            char[] punctuation = Sentence.Where(Char.IsPunctuation).Distinct().ToArray();
+            var wordArray = Sentence.Split().Select(x => x.Trim(punctuation));
+            foreach (string currentWord in wordArray)
+            {
+                if (currentWord == Word)
+                {
+                    count += 1;
+                }
+            }
+            return count;
         }
     }
 }
