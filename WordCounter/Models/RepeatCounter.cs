@@ -4,16 +4,18 @@ using System.Linq;
 
 namespace WordCounter.Models
 {
-    public class RepeatCounter
+    public static class RepeatCounter
     {
-        public string Sentence {get;set;}
-        public string Word {get;set;}
-        public RepeatCounter(string sentence, string word)
+        public static checkIfInputIsValid(string text)
         {
-            Sentence = sentence;
-            Word = word;
+            char[] arr = text.Where(Char.IsSymbol).Distinct().ToArray();
+            if (arr.Length > 0)
+            {
+                return false;
+            }
+            return true;
         }
-        public int Count()
+        public static int Count(string Sentence, string Word)
         {
             int count = 0;
             if ((Sentence.Length == 0) || (Word.Length == 0))
