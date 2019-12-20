@@ -34,5 +34,12 @@ namespace WordCounter.Tests
             int result = testInstance.Count();
             Assert.AreEqual(1, result);
         }
+        [TestMethod]
+        public void RepeatCounter_WordEncounterInSentenceInsideOtherWords_Count()
+        {
+            RepeatCounter testInstance = new RepeatCounter("A sentence with a cathedral", "cat");
+            int result = testInstance.Count();
+            Assert.AreEqual(0, result);
+        }
     }
 }
