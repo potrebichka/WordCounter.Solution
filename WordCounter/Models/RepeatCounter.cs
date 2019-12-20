@@ -16,8 +16,9 @@ namespace WordCounter.Models
         public int Count()
         {
             int count = 0;
+
             char[] punctuation = Sentence.Where(Char.IsPunctuation).Distinct().ToArray();
-            var wordArray = Sentence.Split().Select(x => x.Trim(punctuation));
+            var wordArray = Sentence.ToLower().Split().Select(x => x.Trim(punctuation));
             foreach (string currentWord in wordArray)
             {
                 if (currentWord == Word)

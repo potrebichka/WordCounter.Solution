@@ -18,21 +18,21 @@ namespace WordCounter.Tests
         {
             RepeatCounter testInstance = new RepeatCounter("Just a plain sentence.", "cat");
             int result = testInstance.Count();
-            Assert.AreEqual(result, 0);
+            Assert.AreEqual(0, result);
         }
         [TestMethod]
         public void RepeatCounter_WordEncounterInSentence_Count()
         {
             RepeatCounter testInstance = new RepeatCounter("A cat sentence with a cat.", "cat");
             int result = testInstance.Count();
-            Assert.AreEqual(result, 2);
+            Assert.AreEqual(2, result);
         }
         [TestMethod]
         public void RepeatCounter_WordEncounterInSentenceCaseSensitive_Count()
         {
             RepeatCounter testInstance = new RepeatCounter("Cat hates dog.", "cat");
             int result = testInstance.Count();
-            Assert.AreEqual(result, 1);
+            Assert.AreEqual(1, result);
         }
     }
 }
