@@ -41,7 +41,7 @@ dotnet test
 * User is able to repeat process.
 * User is able to quit the program.
 
-*Valid input types* : letters, digits, {nothing}, punctuation.
+*Valid input types* : letters, digits, {nothing}, punctuation, some symbols(@, #, %, &, *, /, \).
 
 | User Input / sentence | User Input / word | Output |
 |---|---|---|

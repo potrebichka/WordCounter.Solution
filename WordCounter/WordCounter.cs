@@ -9,7 +9,7 @@ namespace WordCounter
         public static void Main()
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-
+            Console.WriteLine();
             Console.WriteLine("Welcome to Word Counter Program");
             Console.ResetColor();
             string sentence, word;
@@ -38,6 +38,7 @@ namespace WordCounter
                     Console.WriteLine("Enter a word:");
                     Console.ForegroundColor = ConsoleColor.Blue;
                     word = Console.ReadLine();
+                    Console.WriteLine();
                     Console.ResetColor();
                     if (RepeatCounter.checkIfInputIsValid(word))
                     {
