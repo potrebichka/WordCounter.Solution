@@ -27,5 +27,12 @@ namespace WordCounter.Tests
             int result = testInstance.Count();
             Assert.AreEqual(result, 2);
         }
+        [TestMethod]
+        public void RepeatCounter_WordEncounterInSentenceCaseSensitive_Count()
+        {
+            RepeatCounter testInstance = new RepeatCounter("Cat hates dog.", "cat");
+            int result = testInstance.Count();
+            Assert.AreEqual(result, 1);
+        }
     }
 }
