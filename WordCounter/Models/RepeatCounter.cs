@@ -7,7 +7,7 @@ namespace WordCounter.Models
     {
         public string Sentence {get;set;}
         public string Word {get;set;}
-        private int _count;
+        private int _count = 0;
         public RepeatCounter(string sentence, string word)
         {
             Sentence = sentence;
@@ -15,7 +15,7 @@ namespace WordCounter.Models
         }
         public int Count()
         {
-            return -1;
+            return _count;
         }
     }
 }
